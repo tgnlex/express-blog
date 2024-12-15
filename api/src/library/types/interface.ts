@@ -1,5 +1,5 @@
 import type {Port, UriPrefix, Plugins} from './index.ts';
-type Config = {
+interface Config  {
   name?: string;
   host: string;
   port: Port;
@@ -9,12 +9,15 @@ type Config = {
   prefix?: UriPrefix;
   plugins: Plugins;
 }
-type EnvVars = {
+interface EnvVars  {
   HOST: string;
   PORT: number; 
   LOGL: string;
   MAIL: string;
   NODE: string;
 }
-
-export {Config, EnvVars};
+interface ITable {
+  name: string;
+  fields: string;
+}
+export {Config, EnvVars, ITable};

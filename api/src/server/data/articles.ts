@@ -1,9 +1,10 @@
-import type { Article } from "library/models.ts";
+import type { Article } from "library/types/models.ts";
 
 const postOne: Article = {
   id: 1, 
   title: "Hello World",
-  content: "Welcome to my website, this is my first post"
+  content: "Welcome to my website, this is my first post",
+  likes: 0,
 }
 const postTwo: Article = {
   id: 2, 
@@ -13,7 +14,8 @@ const postTwo: Article = {
   2. NodeJS  (Runtime) \n 
   3. Express (Backend framework) \n 
   4. ETA (templating engine) \n
-  `
+  `,
+  likes: 0
 }
 const articles: Article[] = [ postOne, postTwo ];
   
