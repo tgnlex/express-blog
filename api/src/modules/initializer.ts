@@ -1,7 +1,8 @@
-import type { Express as App, RequestHandler } from "express"
+import type { App, ReqHandler } from "../library/extension.ts";
 import {Config} from 'library/types/interface.ts';
-import {express} from 'deps';
+import express from 'express';
 import {startMsg} from 'library/literals.ts';
+
 class Server {
   public app: App;
   public name: string;
@@ -40,7 +41,7 @@ class Server {
     this.app.set('node env', this.node_env);
   }
   private Plugins = () => {
-    this.plugins.map((plugin: RequestHandler) => ( this.app.use(plugin) ))
+    this.plugins.map((plugin: ReqHandler) => ( this.app.use(plugin) ))
   }
   private Router = () => {
     if (this.router) this.app.use(this.router);
