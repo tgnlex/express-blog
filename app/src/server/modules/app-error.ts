@@ -7,4 +7,6 @@ class AppError extends Error {
         this.status = statusCode < 500 ? "error" : "fail";
         Error.captureStackTrace(this, this.constructor);
     }
-}
+};
+
+export default AppError;

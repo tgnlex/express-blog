@@ -1,4 +1,4 @@
-import {Router} from 'deps';
+import {Router} from 'express';
 import apiRoutes from './routes/index.ts';
 const router = Router();
 

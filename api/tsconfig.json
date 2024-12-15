@@ -30,7 +30,7 @@
       "variables": ["./src/library/variables.ts"],
       "utils": ["src/library/literals.ts"],
       "deps": ["./src/config/deps.ts"],
-      "deptypes": ["./src/config/deptypes.ts"],
+      "extension": ["./src/library/extension.ts"],
       "initializer": ["src/modules/initializer.ts"]
     }
   }

@@ -1,5 +1,5 @@
-import {environment} from 'deps';
-environment();
+import dotenv from 'dotenv';
+dotenv.config();
 const HOST: string = process.env.API_HOST || "localhost";
 const PORT: number = Number(process.env.API_PORT) || 5000;
 const NODE: string = process.env.NODE_ENV || "development";

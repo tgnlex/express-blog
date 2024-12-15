@@ -2,7 +2,7 @@ import server from './server/index.ts';
 
 async function main() {
   console.log('running main')
-  await server.start();
+  await server.listen();
 };
 
 try {

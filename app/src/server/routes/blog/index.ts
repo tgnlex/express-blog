@@ -1,7 +1,7 @@
 import {Router} from 'express';
 import data from '@/server/data';
 import render from 'config/eta';
-import {api} from 'library/index.ts';
+import api from 'library/api/blog.ts';
 
 const router = Router();
 

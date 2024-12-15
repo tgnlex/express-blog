@@ -62,7 +62,7 @@ class Server {
     // Apply Handlers Last
     this.Handlers();
   }
-  public start = () => this.app.listen(this.port, () => this.startupLog());
+  public listen = () => this.app.listen(this.port, () => this.startupLog());
 }
 
 export default Server;

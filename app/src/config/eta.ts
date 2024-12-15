@@ -1,4 +1,4 @@
-import { Eta } from 'config/deps.ts';
+import { Eta } from 'eta';
 import { __views } from 'library/variables.ts';
 const eta = new Eta({ views: __views })
 
