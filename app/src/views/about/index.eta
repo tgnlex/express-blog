@@ -1,0 +1,7 @@
+<% layout('../_layouts/base.eta') %>
+
+<main class="main-container">
+  <h2>About</h2>
+</main>
+
+

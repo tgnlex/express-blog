@@ -1,0 +1,13 @@
+
+.feed {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0 5px;
+  margin: 0;
+}

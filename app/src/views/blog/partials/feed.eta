@@ -1,0 +1,14 @@
+<ul class="blog--feed">
+    <% it.articles.forEach(function(article) { %>
+      <li class="preview">
+        <a href="blog/<%= article.id %>" class="preview--link">
+          <span class="preview--id">
+            <%= article.id %>.
+          </span> 
+          <span class="preview--title">
+            <%= article.title %>
+          </span>
+        </a>
+      </li>
+    <% }) %>
+  </ul>

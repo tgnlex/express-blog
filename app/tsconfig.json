@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "lib": ["es2023"],
+    "module": "node16",
+    "target": "esnext",
+    "moduleResolution": "node16",
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "strict": false,
+    "strictFunctionTypes": false,
+    "strictNullChecks": false,
+    "strictBindCallApply": false,
+    "strictBuiltinIteratorReturn": false,
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "allowArbitraryExtensions": true,
+    "allowJs": true,
+    "allowUnreachableCode": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "#/*": ["./static/*"],
+      "config/*": ["./src/config/*"],
+      "data/*": ["./src/server/data/*"],
+      "library/*": ["./src/library/*"],
+      "api/*": ["./src/library/api/*"],
+      "modules/*": ["./src/server/modules/*"],
+      "types/*": ["./src/library/types/*"], 
+      "routes/*": ["./src/server/routes/*"],
+      "views/*": ["./src/views/*"],
+      "env": ["./src/config/env.ts"],
+
+      "app": ["src/server/index.ts"],
+      "initializer": ["./src/server/modules/initializer.ts"],
+      "utils": ["src/library/utilities.ts"],
+      "variables": ["./src/library/variables.ts"],
+    }
+  }
+}

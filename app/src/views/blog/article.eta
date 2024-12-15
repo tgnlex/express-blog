@@ -1,0 +1,13 @@
+<% layout('../_layouts/base.eta')%>
+
+
+<main class="main-container">
+  <article class="article">
+    <h2 class="article--title">
+      <%= it.title %>
+    </h2>
+    <p class="article--content">
+      <%= it.content %>
+    </p>
+  </article>
+</main>

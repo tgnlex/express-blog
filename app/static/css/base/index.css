@@ -1,0 +1,21 @@
+@import "./font.css";
+@import "./button.css";
+:root {
+  background-color: var(--primary);
+  color-scheme: light dark;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  max-width: 1600px;
+}

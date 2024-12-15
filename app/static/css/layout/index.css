@@ -1,0 +1,27 @@
+
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  max-width: var(--pc-lg-max-w);
+  min-width: var(--pc-lg-min-w);
+}
+.header {
+  width: 100%;
+  max-width: var(--pc-lg-max-w);
+  min-width: var(--pc-lg-min-w);
+}
+
+.main {
+  width: var(--main-width);
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+}
+
+.footer {
+  width: 100%;
+  max-width: var(--pc-lg-max-w);
+  min-width: var(--pc-lg-min-w);
+}

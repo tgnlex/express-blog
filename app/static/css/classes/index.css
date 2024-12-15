@@ -1,0 +1,17 @@
+.grid {
+  display: grid;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  display: block;
+  margin-inline: center;
+}

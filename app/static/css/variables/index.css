@@ -1,0 +1,11 @@
+@import "./viewport.css";
+@import "./colors.css";
+@import "./font.css";
+
+:root {
+  --main-width: 80vw;
+  --sidebar-width: calc(100vw - var(--main-width));
+  --hover-transition-duration: 25s;
+  --hover-border-transition: border-color var(--hover-transition-duration);
+}
+

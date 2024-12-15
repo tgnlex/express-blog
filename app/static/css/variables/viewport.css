@@ -1,0 +1,13 @@
+:root {
+    --default-max-screen-width: 1920px;
+    --pc-lg-max-w: var(--default-max-screen-width);
+    --pc-lg-min-w: 1600px;
+    --pc-md-max-w: calc(var(--pc-lg-min-w) - 1);
+    --pc-md-min-w: 1200px;
+    --pc-sm-max-w: calc(var(--pc-md-min-w) - 1);
+    --pc-sm-min-w: 992px;
+    --tablet-max-w: calc(var(--pc-sm-min-w) - 1);
+    --tablet-min-w: 768px;
+    --mobile-max-w: calc(var(--tablet-min-width) - 1);
+    --mobile-min-w: 320px;
+  }

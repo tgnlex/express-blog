@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "lib": ["es2023"],
+    "module": "node16",
+    "target": "es2022",
+    "moduleResolution": "node16",
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "strict": false,
+    "strictFunctionTypes": false,
+    "strictNullChecks": false,
+    "strictBindCallApply": false,
+    "strictBuiltinIteratorReturn": false,
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "allowArbitraryExtensions": true,
+    "allowJs": true,
+    "allowUnreachableCode": true,
+    "baseUrl": ".",
+    "paths": {
+      "config/*": ["./src/config/*"],
+      "library/*": ["./src/library/*"],
+      "server/*": ["./src/server/*"],
+      "data/*": ["./src/server/data/*"],
+      "env": ["./src/config/env.ts"],
+      "app": ["./src/server/app.ts"],
+      "constant": ["./src/library/constants.ts"],
+      "variables": ["./src/library/variables.ts"],
+      "utils": ["src/library/literals.ts"],
+      "deps": ["./src/config/deps.ts"],
+      "deptypes": ["./src/config/deptypes.ts"],
+      "initializer": ["src/modules/initializer.ts"]
+    }
+  }
+}

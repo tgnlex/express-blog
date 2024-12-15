@@ -1,0 +1,8 @@
+:root {
+  --primary: rgb(12, 12, 12);
+  --inverse: rgb(243, 243, 243);
+  --secondary: rgb(180, 180, 180);
+  --tertiary: rgb(100, 108, 255); 
+  --special-1: rgb(102, 51, 153);  
+  --special-2: rgb(80, 230, 230);
+}

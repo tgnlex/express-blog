@@ -1,0 +1,15 @@
+<% layout('../_layouts/base.eta') %>
+
+<main id="blog" class="main-container">
+  <h2 class="blog--heading">Recent posts</h2>
+  <%~ include('./partials/feed', {articles: it.articles})%>
+</main>
+
+<style>
+  .blog--feed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+  }
+</style>

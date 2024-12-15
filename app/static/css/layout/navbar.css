@@ -1,0 +1,22 @@
+.navbar {
+  width: 100%;
+  max-width: var(--pc-lg-max-w);
+  min-width: var(--pc-lg-min-w);
+  padding: 0 10px 0 10px;
+}
+
+.navbar--list {
+  display: flex;
+  max-width: var(--pc-lg-max-w) - 20px;
+  min-width: var(--pc-lg-min-w);
+}
+
+.navbar--item {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--inverse);
+}
+
+.navbar--link {
+  color: var(--special-1);
+}
