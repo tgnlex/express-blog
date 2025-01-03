@@ -7,8 +7,8 @@ const server = new Server(config);
 server.initialize();
 server.setMainRouter(router);
 
-server.use(errorHandler.logger);
+server.use(server.handlers.logger);
 server.use(errorHandler.client);
-server.use(errorHandler.final);
+server.use(errorHandler.except);
 
 export default server;

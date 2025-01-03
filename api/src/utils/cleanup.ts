@@ -1,16 +1,18 @@
-import log from "@/modules/logger";
 import tags from "@/library/templates/tags";
 import { SIGT } from "@/constants";
-let {proc, serverProc} = tags;
+import Logger from "@/modules/logger/constructor";
 
+const log = {
+  proc: new Logger({level: 'signal', tag: tags.proc}),
+  main: new Logger({level: 'info', tag: tags.main})
+};
+const offline = () => log.main.info('Http server is offline.');
+const sigterm = `${SIGT} signal received... Preparing for shutdown!`;
 
 const cleanup = (instance) => {  
-  let sigterm = proc(`${SIGT} signal received. Closing http server.`)
-  log.main(sigterm)
-  instance.close(() => {
-    let shutdown = serverProc(`HTTP Server is offline..!`);
-    log.main(shutdown)
-  });
+  log.proc.signal(sigterm)
+
+  instance.close(() => offline());
 };
 
 export default cleanup;

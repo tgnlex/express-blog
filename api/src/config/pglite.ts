@@ -1,7 +1,6 @@
-import {resolve} from 'path';
-import {__pg} from '../constants.ts';
+import paths from '../paths.ts';
 import * as pg from '@electric-sql/pglite';
 
-const db = new pg.PGlite(__pg);
+const db = new pg.PGlite(paths.pglite);
 
 export default db;

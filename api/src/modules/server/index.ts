@@ -2,10 +2,11 @@ import type {ServerVars, AppHandlers, AppServices, Config} from "./interface/ind
 import { Express } from "express";
 import express, { Router } from 'express';
 import {listening} from 'library/templates/index.ts';
-import tags from "library/templates/tags.ts";
+import tags from "@/library/templates/tags.ts";
 import { Middleware, Plugin } from "@/library/types/alias.ts";
 import { fmtAddr } from "@/utils/fmt.ts";
-import log from "../logger/index.ts";
+import Logger from "../logger/constructor.ts";
+
 class Server {
   protected app: Express;
   protected api: Router;
@@ -15,7 +16,7 @@ class Server {
   public handlers: AppHandlers;
   public services: AppServices;
   public routers: Router[];
-  public logger = log;
+  public log = new Logger({level: "info", tag: tags.server});
   constructor(config: Config) {
     this.app = express();
     this.vars = config.vars;
@@ -30,8 +31,8 @@ class Server {
   public get = (key) => this.app.get(key);
   public set = (key, val) => this.app.set(key, val);
   public route = (router: Router, prefix: string) => this.app.use(prefix, router);
-  public logVersion = () => log.api(`Version: ${this.vars.version}`);
-  public logMessage = () => log.api(listening(this.vars.address));
+  public logVersion = () => this.log.info(`Version: ${this.vars.version}`);
+  public logMessage = () => this.log.info(this.vars.address);
   protected setLocals = () => {
     let v = this.vars;
     this.app.locals.name = v.name;

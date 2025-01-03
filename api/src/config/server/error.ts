@@ -1,7 +1,9 @@
-import tags from "library/templates/tags";
+import tags from "@/library/templates/tags";
+import Logger from "@/modules/logger/constructor";
+
+const log = new Logger({level: 'error', tag: tags.none})
 function loggerHandler(err, req, res, next) {
-  const message = tags.error(err.stack)
-  console.error(message);
+  log.error(err.stack);
   next(err);
 };
 function clientHandler(err, req, res, next) {

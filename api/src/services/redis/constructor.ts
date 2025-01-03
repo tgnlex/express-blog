@@ -1,21 +1,20 @@
 import type { RedisClientType as Client } from 'redis';
-import log from '@/modules/logger';
-import tags from 'library/templates/tags';
+import tags from '@/library/templates/tags';
 import redis from 'redis';
-
+import Logger from '@/modules/logger/constructor';
 type CB = (err?: Error) => void;
 class RedisCache {
     public client: Client;
-    public tag = tags.redis;
+    public log = new Logger({level: 'level', tag: tags.redis});
     public on = (e, cb: CB) => this.client.on(e, (err) => cb(err));
-    protected initLog = () => log.info(this.tag('Starting Redis client...'))
+    protected onInit = () => this.log.info('Starting Redis client...');
     protected error = (err) => {
       const status = `Status: ${err.statusCode}`;
-      log.error(this.tag(err.message));
-      log.error(this.tag(status));
+      this.log.error(err.message);
+      this.log.error(status);
     };
     constructor() {
-      this.initLog();
+      this.onInit();
       this.client = redis.createClient();
     };
     public handleErrors() {
