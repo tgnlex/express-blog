@@ -1,10 +1,8 @@
 import {Router} from 'express';
 import blog from './blog/index.ts';
 import pages from "./page/index.ts";
-const router = Router();
+
+const routes = [blog, pages];
 
 
-router.use(blog);
-router.use(pages);
-
-export default router;
+export default routes;

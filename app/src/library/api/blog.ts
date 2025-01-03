@@ -1,5 +1,5 @@
 import data from "data/index.ts";
-import {__api} from '../variables.ts';
+import {__api} from '../constants.ts';
 const getPosts = async () => {
   const response = await fetch(`${__api}/posts`);
   const data = await response.json();

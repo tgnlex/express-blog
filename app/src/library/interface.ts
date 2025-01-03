@@ -1,4 +1,5 @@
-import type {Port, Plugins, Handlers, UriPrefix} from './types/aliases.ts';
+import type {Port, Plugins, Handlers, UriPrefix} from '../types/aliases.ts';
+import type { RequestHandler } from 'express';
 interface EnvVars {
   HOST: string, 
   PORT: number, 
@@ -7,16 +8,6 @@ interface EnvVars {
   MAIL: string;
   API: { HOST: string, PORT: number }
 };
-interface Config {
-  name?: string;
-  host: string;
-  port: Port;
-  log_level: string; 
-  node_env: string;
-  email?: string;
-  prefix?: UriPrefix;
-  plugins?: Plugins;
-  handlers?: Handlers;
-}
 
-export { EnvVars, Config };
+
+export { EnvVars };

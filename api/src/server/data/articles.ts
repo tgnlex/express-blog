@@ -1,9 +1,10 @@
-import type { Article } from "library/types/models.ts";
+import type { IArticle as Article } from "@/data/article";
 
 const postOne: Article = {
   id: 1, 
   title: "Hello World",
   content: "Welcome to my website, this is my first post",
+  views: 0,
   likes: 0,
 }
 const postTwo: Article = {
@@ -15,7 +16,8 @@ const postTwo: Article = {
   3. Express (Backend framework) \n 
   4. ETA (templating engine) \n
   `,
-  likes: 0
+  views: 0,
+  likes: 0,
 }
 const articles: Article[] = [ postOne, postTwo ];
   

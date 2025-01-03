@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "lib": ["es2023"],
-    "module": "node16",
-    "target": "es2022",
-    "moduleResolution": "node16",
+    "module": "esnext",
+    "target": "es5",
+    "moduleResolution": "bundler",
     "noImplicitAny": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -14,24 +14,29 @@
     "strictBindCallApply": false,
     "strictBuiltinIteratorReturn": false,
     "allowImportingTsExtensions": true,
+    "resolvePackageJsonImports": true,
     "resolveJsonModule": true,
     "allowArbitraryExtensions": true,
     "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "allowUmdGlobalAccess": true,
+    "allowUnusedLabels": true,
     "allowUnreachableCode": true,
     "baseUrl": ".",
     "paths": {
+      "@/*": ["./src/*"],
       "config/*": ["./src/config/*"],
       "library/*": ["./src/library/*"],
       "server/*": ["./src/server/*"],
       "data/*": ["./src/server/data/*"],
+      "db": ["./src/config/pglite.ts"],
       "env": ["./src/config/env.ts"],
-      "app": ["./src/server/app.ts"],
+      "app": ["src/server/index.ts"],
       "constant": ["./src/library/constants.ts"],
-      "variables": ["./src/library/variables.ts"],
-      "utils": ["src/library/literals.ts"],
+      "variables": ["src/library/variables.ts"],
+      "utils": ["src/library/templates/index.ts"],
       "deps": ["./src/config/deps.ts"],
-      "extension": ["./src/library/extension.ts"],
-      "initializer": ["src/modules/initializer.ts"]
+      "initializer": ["src/modules/server/index.ts"]
     }
   }
 }

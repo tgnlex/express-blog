@@ -1,9 +1,9 @@
-import Server from 'initializer';
-import config from 'config/server.ts';
-import router from 'routes/index.ts';
-const server = new Server(config, router);
+import Server from '@/server/modules/initializer';
+import config from '@/config';
+import routes from 'routes/index.ts';
 
-server.init();
-
+const server = new Server(config);
+server.globals();
+server.Router(routes);
 
 export default server;

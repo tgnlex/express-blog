@@ -1,5 +1,5 @@
 import express, {urlencoded, json} from 'express';
-import { __static } from 'library/variables.ts';
+import { __static } from '@/library/constants';
 const plugins = [
   express.urlencoded({extended: true}),
   express.json(),

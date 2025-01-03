@@ -1,5 +1,5 @@
 import {Router} from 'express';
-import apiRoutes from './routes/index.ts';
+import routes from './routes/index.ts';
 const router = Router();
 
 router.get('/', (req, res) => {
@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
   })
 })
 
-router.use('/api', apiRoutes)
+router.use(routes);
 
 
 export default router;

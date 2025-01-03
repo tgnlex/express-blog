@@ -27,15 +27,15 @@
       "library/*": ["./src/library/*"],
       "api/*": ["./src/library/api/*"],
       "modules/*": ["./src/server/modules/*"],
-      "types/*": ["./src/library/types/*"], 
+      "types/*": ["src/types/*"], 
       "routes/*": ["./src/server/routes/*"],
       "views/*": ["./src/views/*"],
       "env": ["./src/config/env.ts"],
 
       "app": ["src/server/index.ts"],
-      "initializer": ["./src/server/modules/initializer.ts"],
-      "utils": ["src/library/utilities.ts"],
-      "variables": ["./src/library/variables.ts"],
+      "initializer": ["src/server/modules/initializer/index.ts"],
+      "utils": ["src/library/literals.ts"],
+      "variables": ["src/library/constants.ts"],
     }
   }
 }

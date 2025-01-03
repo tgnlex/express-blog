@@ -1,5 +1,5 @@
 import { Eta } from 'eta';
-import { __views } from 'library/variables.ts';
+import { __views } from '@/library/constants';
 const eta = new Eta({ views: __views })
 
 function render(template: string, data: any) {

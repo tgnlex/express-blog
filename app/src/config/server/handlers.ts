@@ -1,4 +1,4 @@
-import {development} from 'variables';
+import {development} from '@/library/constants';
 const errorHandler = (err, req, res, next) => {
   err.status = err.status || "fail";
   err.statusCode = err.statusCode || 500;

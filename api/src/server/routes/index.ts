@@ -1,9 +1,9 @@
 import {Router} from 'express';
 import {articles} from 'server/data/articles.ts';
-import type {Req, Resp} from 'extension';
+import {Request, Response} from 'express';
 const router = Router();
 
-router.get('/posts', (req: Req, res: Resp) => {
+router.get('/posts', (req: Request, res: Response) => {
     res.setHeader("Content-Type", "application/json");
     res.json({articles});
 });

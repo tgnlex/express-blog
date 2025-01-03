@@ -1,13 +1,35 @@
 import env from "env"
-import type { Config } from "library/types/interface.ts";
-import plugins from "./plugins.ts";
-const config: Config = {
-  name: "main api",
+import plugins from "./server/plugins.ts";
+import redis from "@/services/redis/index.ts";
+import errorHandler from "./server/error.ts";
+import {query} from "@/services/pglite/index.ts";
+import type { Config } from "@/modules/server/interface/index.ts";
+let vmajor: 1;
+let vminor: 0;
+let vpatch: 0;
+const vars = {
+  name: "api",
+  version: `${vmajor}.${vminor}.${vpatch}`,
+  protocol: "http",
+  rtprefix: "/api",
   host: env.HOST,
   port: env.PORT,
-  email: env.MAIL,
-  log_level: env.LOGL,
-  node_env: env.NODE,
-  plugins: [...plugins]
+  mail: env.MAIL,
+  node: env.NODE,  
+}
+const config: Config = {
+  vars: vars,
+  plugins: [...plugins],
+  middlewares: [],
+  services: {
+    redis: redis,
+    pg: query,
+  },
+  handlers: {
+    logger: errorHandler.logger,
+    client: errorHandler.client,
+    except: errorHandler.except,
+  }
 }
 export default config;
+export type {Config};
