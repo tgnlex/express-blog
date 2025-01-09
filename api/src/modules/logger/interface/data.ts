@@ -1,3 +1,4 @@
+
 type Data = string | number | boolean | object | null | {};
 type LogData = Array<Data>;
 type TagData = Array<Data>;

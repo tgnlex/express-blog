@@ -16,8 +16,9 @@ async function main() {
   catch (err) {
     log.error(err);
   }
-  
 }
+
+main();
 
 
 

@@ -5,8 +5,8 @@ type Value = string | number | boolean | null;
 type Handler = RequestHandler;
 type Plugin = RequestHandler;
 type Middleware = RequestHandler;
-
 type Service = Router | Express | Server;
+
 export { 
     Plugin,
     Middleware,
