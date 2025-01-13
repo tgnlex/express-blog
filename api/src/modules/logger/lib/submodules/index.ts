@@ -1,5 +1,5 @@
-import format from "./format";
-import parseLevel from "./parser";
+import format from "./format.ts";
+import parseLevel from "./parser.ts";
 export {
   format,
   parseLevel

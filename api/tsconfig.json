@@ -1,9 +1,8 @@
 {
   "compilerOptions": {
     "lib": ["es2023"],
-    "module": "esnext",
-    "target": "es5",
-    "moduleResolution": "bundler",
+    "module": "node16",
+    "moduleResolution": "node16",
     "noImplicitAny": false,
     "esModuleInterop": true,
     "skipLibCheck": true,

@@ -1,5 +1,5 @@
-import tags from "@/library/templates/tags";
-import Logger from "@/modules/logger/constructor";
+import tags from "@/library/templates/tags.ts";
+import Logger from "@/modules/logger/constructor.ts";
 
 const log = new Logger({level: 'error', tag: tags.none})
 function loggerHandler(err, req, res, next) {

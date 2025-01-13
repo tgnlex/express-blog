@@ -1,5 +1,4 @@
-import Level from "../enums/levels";
-import ID from "../enums/identifiers";
+import {LogLevel as Level, LevelId as ID} from "../enums/levels.ts";
 
 function parseLevel(input: string): Level {
   let identifier: string = input.toLowerCase();

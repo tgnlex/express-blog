@@ -1,15 +1,12 @@
 import env from "env"
 import plugins from "./server/plugins.ts";
-import redis from "@/services/redis/index.ts";
+import redis from "@/modules/redis/index.ts";
 import errorHandler from "./server/error.ts";
-import {query} from "@/services/pglite/index.ts";
-import type { Config, ConfigVars } from "@/modules/server/interface/index.ts";
-let vmajor: 1;
-let vminor: 0;
-let vpatch: 0;
+import type { Config, ConfigVars } from "@/modules/server/lib/interface/index.ts";
+
 const vars: ConfigVars = {
   name: "api",
-  version: `${vmajor}.${vminor}.${vpatch}`,
+  version: `1.0.0`,
   protocol: "http",
   rtprefix: "/api",
   host: env.HOST,
@@ -23,7 +20,6 @@ const config: Config = {
   middlewares: [],
   services: {
     redis: redis,
-    pg: query,
   },
   handlers: {
     logger: errorHandler.logger,

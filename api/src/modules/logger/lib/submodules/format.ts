@@ -1,11 +1,13 @@
-import { Data } from "../../interface/data";
-function format(data: Data[],  context = {}) {
-    let fmt: string;
+type LogData = string | number;
+function format(data: Array<LogData>,  context = {}) {
+  let ctx = JSON.stringify(context);  
+  let fmt: string;
     if (data.length > 1) {
-      fmt = data.map(val => JSON.stringify(val)).join(' ');
-      return `${fmt} | Context: ${context}`;
+      let arr = [data];
+      fmt = arr.map(val => JSON.stringify(val)).join('');
+      return `${fmt} | Context: ${ctx}`;
     }  
-    return `${data} | Context: ${context}`;
+    return `${data} | Context: ${ctx}`;
 };
 
 export default format;

@@ -1,12 +1,18 @@
 import {Router} from 'express';
-import {articles} from 'server/data/articles.ts';
-import {Request, Response} from 'express';
+import userRouter from './users.ts';
+import postRouter from './posts.ts';
+import subsRouter from './subscribers.ts';
+
 const router = Router();
 
-router.get('/posts', (req: Request, res: Response) => {
-    res.setHeader("Content-Type", "application/json");
-    res.json({articles});
+router.get('/', (req, res) => {
+    res.json({ status: "running", code: 200 });
 });
+
+router.use('/subscribers', subsRouter);
+router.use('/posts', postRouter);
+router.use('/users', userRouter);
+
 
 export default router;
   

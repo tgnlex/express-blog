@@ -1,6 +1,6 @@
-import {json} from 'library/variables';
+
 function setGlobalHeaders(req, res, next) {
-  res.setHeader('Content-Type', json);
+  res.setHeader('Content-Type', "application/json");
   next()
 }
 function logRequestData(req, res, next) {

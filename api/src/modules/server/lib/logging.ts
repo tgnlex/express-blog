@@ -1,5 +1,5 @@
-import Logger from "@/modules/logger/constructor";
-import { tags } from "@/library/templates";
+import Logger from "@/modules/logger/constructor.ts";
+import { tags } from "@/library/templates/index.ts";
 
 const log = {
   server: new Logger({level: 'signal', tag: tags.server}),

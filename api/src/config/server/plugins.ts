@@ -1,8 +1,8 @@
 import {json, urlencoded} from 'express';
 
 const plugins = [
+  urlencoded({extended: true}),
   json(),
-  urlencoded({extended: true})
 ];
 
 export default plugins;

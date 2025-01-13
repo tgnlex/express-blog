@@ -1,7 +1,5 @@
-import LogTag from "./enums/tags";
-import  LogLevel from "./enums/levels";
-import LevelId from "./enums/identifiers";
-import {format, parseLevel} from "./submodules"
+import  {LogLevel, LevelId, LogTag} from "./enums/levels.ts";
+import {format, parseLevel} from "./submodules/index.ts"
 
 export {LogTag, LogLevel, LevelId};
 export {format, parseLevel}

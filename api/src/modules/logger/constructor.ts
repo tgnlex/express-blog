@@ -1,12 +1,12 @@
 import { Data } from "./interface/data.ts";
-import {LogLevel as Level, LogTag as LTag} from "./lib";
+import {LogLevel as Level, LogTag as LTag} from "./lib/index.ts";
 import tags from "../../library/templates/tags.ts";
 import {format, parseLevel} from "./lib/submodules/index.ts";
 import type {LogConfig as Config} from './interface/index.ts'
 import { LevelId } from "./lib/index.ts";
 class Logger {
   private level: Level;
-  public tag
+  public tag: (data: string) => string;
   constructor(config?: Config) {
     this.level = parseLevel(config.level) || Level.DATA;
     this.tag = config.tag || tags.api;
@@ -15,19 +15,18 @@ class Logger {
     if (this.level >= level) { return true };
     return null;
   }  
-  protected applyTags(input: string, level: Level) {
-    let ltag = LTag[level];
-    return `${ltag} ${this.tag(input)}`
-};
-public setLevel(identifier: LevelId) {
-  this.level = parseLevel(identifier);
-}
-debug(data: any, context = {}): void {
+  protected applyTags(input: string) {
+    return `${this.tag(input)}`;
+  };
+  public setLevel(identifier: LevelId) {
+    this.level = parseLevel(identifier);
+  }
+  debug(data: any, context = {}): void {
     let level: number = Level.DEBUG;
     let fmt, log: string;
     if (this.checkLevel(level)) {
         fmt = `${format(data, context)}`;
-        log = this.applyTags(fmt, level);
+        log = this.applyTags(fmt);
         console.debug(log);
     };
   }; 
@@ -36,7 +35,7 @@ debug(data: any, context = {}): void {
     let fmt, log: string;
     if (this.checkLevel(level)) {
         fmt = `${format(data, context)}`;
-        log = this.applyTags(fmt, level);
+        log = this.applyTags(fmt);
         console.log(log);
     };
   };
@@ -45,7 +44,7 @@ debug(data: any, context = {}): void {
     let fmt, log: string;
     if (this.checkLevel(level)) {
         fmt = `${format(data, context)}`;
-        log = this.applyTags(fmt, level);
+        log = this.applyTags(fmt);
         console.info(log);
     };
   };
@@ -54,7 +53,7 @@ debug(data: any, context = {}): void {
     let fmt, log: string;
     if (this.checkLevel(level)) {
         fmt = `${format(data, context)}`;
-        log = this.applyTags(fmt, level);
+        log = this.applyTags(fmt);
         console.info(log);
     };
   };
@@ -63,7 +62,7 @@ debug(data: any, context = {}): void {
     let fmt, log: string;
     if (this.checkLevel(level)) {
         fmt = `${format(data, context)}`;
-        log = this.applyTags(fmt, level);
+        log = this.applyTags(fmt);
         console.info(log);
     };
   };
@@ -72,7 +71,7 @@ debug(data: any, context = {}): void {
     let fmt, log: string;
     if (this.checkLevel(level)) {
         fmt = `${format(data, context)}`;
-        log = this.applyTags(fmt, level);
+        log = this.applyTags(fmt);
         console.warn(log);
     };
   };
@@ -81,7 +80,7 @@ debug(data: any, context = {}): void {
     let fmt, log: string;
     if (this.checkLevel(level)) {
         fmt = `${format(data, context)}`;
-        log = this.applyTags(fmt, level);
+        log = this.applyTags(fmt);
         console.warn(log);
     };
   };
@@ -90,7 +89,7 @@ debug(data: any, context = {}): void {
     let fmt, log: string;
     if (this.checkLevel(level)) {
         fmt = `${format(data, context)}`;
-        log = this.applyTags(fmt, level);
+        log = this.applyTags(fmt);
         console.error(log);
     };
   };
@@ -99,7 +98,7 @@ debug(data: any, context = {}): void {
     let fmt, log: string;
     if (this.checkLevel(level)) {
         fmt = `${format(data, context)}`;
-        log = this.applyTags(fmt, level);
+        log = this.applyTags(fmt);
         console.error(log);
     };
   };
@@ -108,7 +107,7 @@ debug(data: any, context = {}): void {
     let fmt, log: string;
     if (this.checkLevel(level)) {
         fmt = `${format(data, context)}`;
-        log = this.applyTags(fmt, level);
+        log = this.applyTags(fmt);
         console.error(log);
     };
   };

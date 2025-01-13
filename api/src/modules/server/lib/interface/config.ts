@@ -1,7 +1,6 @@
-import type {Plugin, Middleware} from "@/library/types/alias"
-import { UriPrefix } from "@/library/types/literals";
-import type RedisCache from '@/services/redis/constructor';
-type Version = `${number}.${number}.${number}`;
+import type {Plugin, Middleware} from "@/library/types/alias.ts"
+import { UriPrefix } from "@/library/types/literals.ts";
+import type RedisCache from '@/modules/redis/constructor.ts';
 type ErrHandler = (err, req, res, next) => void;
 interface ConfigVars {
   name: string;
@@ -9,11 +8,11 @@ interface ConfigVars {
   port: number;
   node: string;
   mail: string;
-  version?: Version;
+  version?: string;
   rtprefix?: string;
   protocol?: UriPrefix;
 };
-interface AppServices { redis?: RedisCache; pg?: any; }
+interface AppServices { redis?: RedisCache; }
 interface AppHandlers {
   logger?: ErrHandler;
   client?: ErrHandler;
@@ -26,5 +25,5 @@ interface Config  {
   middlewares: Middleware[];  
   plugins: Plugin[];
 };
-export type { Version, Config, ConfigVars };
+export type { Config, ConfigVars };
 export type { AppHandlers, AppServices };

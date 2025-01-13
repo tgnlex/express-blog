@@ -7,7 +7,7 @@ import { fmtAddr } from "@/utils/fmt.ts";
 import Logger from "../logger/constructor.ts";
 import { SIGT } from "@/constants.ts";
 import cleanup from "./lib/utils.ts";
-
+import {onListen, onClose} from './lib/callbacks.ts';
 class Server {
   protected app: Express;
   protected api: Router;
@@ -76,14 +76,12 @@ class Server {
     this.setPlugins();
     this.setGlobalware();
   };
-  
-
 
   protected listen = () => {
     let data = this.Metadata();
     let port = this.vars.port;
     /// @ts-ignore
-    return this.app.listen(port, (err) => this.onListen(data, err));
+    return this.app.listen(port, (err) => onListen(data, err));
   }
   public start = async () => {
     const instance = await this.listen();

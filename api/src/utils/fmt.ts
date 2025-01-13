@@ -1,5 +1,5 @@
-import { address } from "@/library/templates";
-import { UriPrefix } from "@/library/types/literals";
+import { address } from "@/library/templates/index.ts";
+import { UriPrefix } from "@/library/types/literals.ts";
 let addr: string;
 
 function fmtAddr(vars, protocol?: UriPrefix) {
